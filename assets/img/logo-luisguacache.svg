@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" role="img" aria-label="Luis Guacache">
+  <title>Luis Guacache</title>
+  <!-- Monograma LG + pulso tecnológico (vector limpio, adaptable con currentColor) -->
+  <g fill="none" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- L -->
+    <path d="M20 10v44h34"/>
+    <!-- G (casi círculo abierto) -->
+    <path d="M140 22c-10-10-24-14-38-10-18 5-30 22-28 40 2 17 16 30 34 32 12 1 24-3 32-12"/>
+    <path d="M130 42h24"/>
+    <!-- Pulso que conecta -->
+    <path d="M58 34h26l10-12 10 24 10-12h26"/>
+  </g>
+</svg>
