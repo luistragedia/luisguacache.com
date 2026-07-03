@@ -6,5 +6,6 @@ deployment:
     - /bin/cp favicon.png $DEPLOYPATH
     - /bin/cp robots.txt $DEPLOYPATH
     - /bin/cp sitemap.xml $DEPLOYPATH
+    - /bin/cp version.txt $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp -R legal $DEPLOYPATH
