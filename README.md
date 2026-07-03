@@ -32,6 +32,13 @@ No subir cambios directos a producción salvo emergencia. Para mejoras, usar ram
 
 ## Notas de versión
 
+### V1.3-B2 — Pulido final de home
+
+- Se restauraron acentos visibles en la home.
+- Se corrigió el botón flotante de WhatsApp: vuelve a usar el logo SVG en lugar del texto `WA`.
+- Se añadieron estilos específicos para el bloque de preguntas frecuentes.
+- Se actualizó la documentación del proyecto.
+
 ### V1.3-B — SEO home, ecosistema y FAQ
 
 - Se mejoró el SEO interno de `index.html`.
@@ -40,7 +47,6 @@ No subir cambios directos a producción salvo emergencia. Para mejoras, usar ram
 - Se añadió FAQ visible en la home.
 - Se reforzaron CTAs y enlaces hacia contacto.
 - Se añadieron enlaces a `llms.txt` y `humans.txt` en el footer.
-- Se restauraron acentos visibles y el logo SVG de WhatsApp flotante.
 
 ### V1.3-A — Archivos auxiliares SEO/IA
 
