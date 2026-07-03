@@ -1,0 +1,5 @@
+Luis Guacache Web
+Version: V1.2.2
+Deploy method: cPanel Git Version Control
+Branch: main
+Updated: 2026-07-03
