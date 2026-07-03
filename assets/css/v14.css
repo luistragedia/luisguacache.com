@@ -1,6 +1,4 @@
-@import url('/assets/css/v141.css');
-
-/* V1.4 — Conversión visual y confianza */
+/* V1.4.6 — Flat clean layout */
 .section-intro{
   max-width:760px;
 }
@@ -32,12 +30,16 @@
   gap:14px;
   margin-top:20px;
 }
-.trust-item{
-  min-height:58px;
+.trust-item,
+.step-card,
+.confidence-item{
   border:1px solid var(--line);
   border-radius:16px;
+  background:rgba(255,255,255,.022);
+}
+.trust-item{
+  min-height:58px;
   padding:14px 12px;
-  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.014));
 }
 .trust-item strong{
   display:block;
@@ -66,10 +68,7 @@
 }
 .step-card{
   min-height:176px;
-  border:1px solid var(--line);
-  border-radius:18px;
   padding:18px;
-  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.014));
 }
 .step-number{
   display:inline-flex;
@@ -82,7 +81,7 @@
   color:var(--btnText);
   font-weight:800;
   margin-bottom:14px;
-  box-shadow:0 8px 20px rgba(0,0,0,.22);
+  box-shadow:none;
 }
 .step-card p{
   color:var(--muted);
@@ -90,11 +89,11 @@
 }
 .highlight-panel{
   cursor:default;
-  border:1px solid var(--line-strong);
-  border-radius:24px;
-  padding:28px;
-  background:linear-gradient(135deg, rgba(255,255,255,.065), rgba(255,255,255,.02));
-  box-shadow:var(--shadow-soft);
+  border:0;
+  border-radius:0;
+  padding:0;
+  background:transparent;
+  box-shadow:none;
   transform:none;
 }
 .highlight-panel h2{
@@ -114,10 +113,7 @@
   margin-top:20px;
 }
 .confidence-item{
-  border:1px solid var(--line);
-  border-radius:16px;
   padding:16px;
-  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.014));
 }
 .confidence-item strong{
   display:block;
@@ -129,10 +125,8 @@
 }
 .card-featured{
   border-color:var(--line-strong);
-  background:linear-gradient(180deg, rgba(255,255,255,.052), rgba(255,255,255,.02));
+  background:rgba(255,255,255,.028);
 }
-
-/* V1.4.5 — limpieza de hover para evitar efecto botón y distorsión de texto */
 .card,
 .contact-card,
 .faq-list details,
@@ -143,14 +137,13 @@
 .hero-card,
 .pill,
 .hero .badges li{
-  transform:none;
-  will-change:auto;
+  transform:none !important;
+  will-change:auto !important;
   backface-visibility:visible;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
-  transition:border-color .18s ease, background .18s ease, box-shadow .18s ease, filter .18s ease;
+  transition:border-color .18s ease, background .18s ease, filter .18s ease !important;
 }
-
 @media (hover:hover) and (pointer:fine){
   .card:hover,
   .contact-card:hover,
@@ -159,43 +152,39 @@
   .step-card:hover,
   .confidence-item:hover,
   .highlight-panel:hover,
+  .hero-card:hover,
   .pill:hover,
   .hero .badges li:hover{
-    transform:none;
+    transform:none !important;
+    box-shadow:none !important;
+    filter:none !important;
+  }
+  .card:hover,
+  .contact-card:hover,
+  .faq-list details:hover,
+  .trust-item:hover,
+  .step-card:hover,
+  .confidence-item:hover,
+  .pill:hover,
+  .hero .badges li:hover{
     border-color:var(--line-strong);
-    box-shadow:none;
     background:rgba(255,255,255,.035);
   }
-
-  .card-featured:hover{
-    transform:none;
-    box-shadow:none;
-  }
-
   .highlight-panel:hover{
-    transform:none;
     cursor:default;
-    background:linear-gradient(135deg, rgba(255,255,255,.065), rgba(255,255,255,.02));
-    box-shadow:var(--shadow-soft);
+    border:0;
+    background:transparent;
   }
-
-  .step-card:hover .step-number{
-    transform:none;
-    filter:none;
-  }
-
   .hero-card:hover{
-    transform:none;
     border-color:var(--line-strong);
-    box-shadow:var(--shadow-soft);
   }
-
-  .hero-card:hover img{
-    transform:none;
-    filter:none;
+  .hero-card:hover img,
+  .step-card:hover .step-number{
+    transform:none !important;
+    filter:none !important;
+    box-shadow:none !important;
   }
 }
-
 @media (max-width: 980px){
   .trust-strip,
   .process-grid,
@@ -203,7 +192,6 @@
     grid-template-columns:repeat(2, minmax(0, 1fr));
   }
 }
-
 @media (max-width: 760px){
   .hero{
     padding-top:40px;
@@ -216,7 +204,7 @@
     gap:12px;
   }
   .highlight-panel{
-    padding:20px;
-    border-radius:18px;
+    padding:0;
+    border-radius:0;
   }
 }
