@@ -15,6 +15,7 @@ Web principal de Luis Guacache.
 ├── favicon.png
 ├── assets/
 │   ├── css/styles.css
+│   ├── css/v14.css
 │   ├── js/main.js
 │   └── img/
 └── legal/
@@ -31,6 +32,18 @@ GitHub main → cPanel Git™ Version Control → Update from Remote → Deploy 
 No subir cambios directos a producción salvo emergencia. Para mejoras, usar ramas y Pull Request.
 
 ## Notas de versión
+
+### V1.4 — Conversión visual y confianza
+
+- Se ajustó el hero para ser más comercial y directo.
+- Se redujeron los CTAs principales a WhatsApp y servicios.
+- Se añadió bloque de señales de confianza: Madrid, remoto, trato directo y enfoque real.
+- Se reorganizaron los servicios por intención: contenido, web, soporte técnico y proyectos digitales.
+- Se añadió sección `Para quién trabajo`.
+- Se añadió sección de proceso de trabajo en 4 pasos.
+- Se añadió bloque de confianza con propuesta de valor.
+- Se mejoró la sección Ecosistema Luis G.
+- Se creó `assets/css/v14.css` para estilos comerciales sin tocar en exceso la base visual.
 
 ### V1.3-B2 — Pulido final de home
 
