@@ -1,5 +1,0 @@
-Luis Guacache web deploy check
-Version: v1.2.1
-Created from GitHub: 2026-07-03
-Purpose: verify whether the hosting automatically synchronizes from the GitHub main branch.
-If this file appears at https://luisguacache.com/deploy-check.txt without manual upload, GitHub-to-hosting sync is active.
