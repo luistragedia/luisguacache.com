@@ -165,3 +165,13 @@
   .hero-card:hover{transform:translateY(-8px) scale(1.01);border-color:rgba(255,255,255,.34);box-shadow:0 30px 90px rgba(0,0,0,.5)}
   .step-card:hover .step-number{transform:scale(1.12);box-shadow:0 12px 30px rgba(0,0,0,.38);filter:brightness(1.06)}
 }
+
+/* V1.4.3 — hover consistency */
+:root{--hover-border:rgba(255,255,255,.34);--hover-bg:linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.022));--hover-shadow:0 22px 60px rgba(0,0,0,.42)}
+.card,.contact-card,.faq-list details,.trust-item,.step-card,.confidence-item{transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}
+@media (hover:hover) and (pointer:fine){
+  .card:hover,.contact-card:hover,.faq-list details:hover,.trust-item:hover,.step-card:hover,.confidence-item:hover{transform:translateY(-6px);border-color:var(--hover-border);box-shadow:var(--hover-shadow);background:var(--hover-bg)}
+  .card-featured:hover{transform:translateY(-7px);box-shadow:0 24px 68px rgba(0,0,0,.46)}
+  .highlight-panel:hover,.hero-card:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.36);box-shadow:0 28px 82px rgba(0,0,0,.5)}
+  .hero .badges li:hover,.pill:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.075);box-shadow:0 12px 30px rgba(0,0,0,.3)}
+}
