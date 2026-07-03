@@ -17,7 +17,17 @@ Web principal de Luis Guacache.
 └── legal/
 ```
 
-## Notas de esta versión
+## Notas de versión
+
+### V1.2 — Visual y móvil
+
+- Se añadieron efectos hover sutiles en botones, tarjetas, badges, enlaces y foto principal.
+- Se mejoró la sensación visual de profundidad sin recargar la web.
+- Se optimizó la navegación en móvil con menú horizontal tipo chips.
+- Se ajustaron hero, botones, tarjetas, WhatsApp flotante y banner de cookies para pantallas pequeñas.
+- Se añadió soporte para usuarios con reducción de movimiento activada.
+
+### V1.1 — Base limpia
 
 - Versión limpia preparada para GitHub.
 - Se eliminaron carpetas propias del hosting (`cgi-bin`, `.well-known`).
