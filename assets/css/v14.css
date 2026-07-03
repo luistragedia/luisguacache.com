@@ -146,7 +146,7 @@
 @media (hover:hover) and (pointer:fine){
   .hero .badges li:hover,.trust-item:hover,.step-card:hover,.confidence-item:hover{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:var(--shadow-soft);background:linear-gradient(180deg, rgba(255,255,255,.058), rgba(255,255,255,.02))}
   .step-card:hover .step-number{transform:scale(1.04);box-shadow:0 10px 24px rgba(0,0,0,.3)}
-  .highlight-panel:hover,.hero-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.22);box-shadow:0 24px 70px rgba(0,0,0,.32)}
+  .hero-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.22);box-shadow:0 24px 70px rgba(0,0,0,.32)}
 }
 
 @media (max-width:760px){
@@ -156,12 +156,11 @@
 }
 
 /* V1.4.2 — hover visible */
-.trust-item,.step-card,.confidence-item,.highlight-panel,.hero-card{will-change:transform;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease,filter .22s ease}
+.trust-item,.step-card,.confidence-item,.hero-card{will-change:transform;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease,filter .22s ease}
 .trust-item,.step-card,.confidence-item{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.014))}
 @media (hover:hover) and (pointer:fine){
   .hero .badges li:hover{transform:translateY(-5px) scale(1.03);border-color:rgba(255,255,255,.38);background:rgba(255,255,255,.09);box-shadow:0 16px 36px rgba(0,0,0,.34)}
   .trust-item:hover,.step-card:hover,.confidence-item:hover{transform:translateY(-8px) scale(1.015);border-color:rgba(255,255,255,.38);background:linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.025));box-shadow:0 24px 70px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.05)}
-  .highlight-panel:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.34);box-shadow:0 28px 90px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.04);background:linear-gradient(135deg, rgba(255,255,255,.105), rgba(255,255,255,.025))}
   .hero-card:hover{transform:translateY(-8px) scale(1.01);border-color:rgba(255,255,255,.34);box-shadow:0 30px 90px rgba(0,0,0,.5)}
   .step-card:hover .step-number{transform:scale(1.12);box-shadow:0 12px 30px rgba(0,0,0,.38);filter:brightness(1.06)}
 }
@@ -172,6 +171,12 @@
 @media (hover:hover) and (pointer:fine){
   .card:hover,.contact-card:hover,.faq-list details:hover,.trust-item:hover,.step-card:hover,.confidence-item:hover{transform:translateY(-6px);border-color:var(--hover-border);box-shadow:var(--hover-shadow);background:var(--hover-bg)}
   .card-featured:hover{transform:translateY(-7px);box-shadow:0 24px 68px rgba(0,0,0,.46)}
-  .highlight-panel:hover,.hero-card:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.36);box-shadow:0 28px 82px rgba(0,0,0,.5)}
+  .hero-card:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.36);box-shadow:0 28px 82px rgba(0,0,0,.5)}
   .hero .badges li:hover,.pill:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.075);box-shadow:0 12px 30px rgba(0,0,0,.3)}
+}
+
+/* V1.4.4 — highlight panel static */
+.highlight-panel{cursor:default;transform:none;background:linear-gradient(135deg, rgba(255,255,255,.065), rgba(255,255,255,.02));box-shadow:var(--shadow-soft)}
+@media (hover:hover) and (pointer:fine){
+  .highlight-panel:hover{transform:none;border-color:var(--line-strong);box-shadow:var(--shadow-soft);background:linear-gradient(135deg, rgba(255,255,255,.065), rgba(255,255,255,.02))}
 }
