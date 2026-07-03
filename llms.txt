@@ -1,7 +1,57 @@
 # Luis Guacache
 
-Web oficial de Luis Guacache.
+Official website: https://luisguacache.com/
 
-Sitio: https://luisguacache.com/
+Luis Guacache is based in Madrid, Spain. He works between technology, digital content, audiovisual production, online presence and practical digital solutions for real projects.
 
-Resumen: tecnología, contenido digital, presencia online, soporte técnico y proyectos digitales desde Madrid.
+## Main services
+
+- Audiovisual production: photography, video, editing and post-production.
+- Social media content: Reels, TikTok, Shorts and vertical video pieces.
+- Digital presence: landing pages, link structure, profile optimization and clear messaging.
+- Technical support: hardware, software, multi-screen setups, docks, workflow and productivity.
+- Digital projects: organization of ideas, simple web projects, prototypes and internal tools.
+
+## Main topics
+
+Luis Guacache is connected with these topics:
+
+- Personal brand
+- Digital services
+- Web development
+- Landing pages
+- Technical support
+- Content creation
+- Photography and video
+- Social media content
+- Automation
+- Artificial intelligence applied to real projects
+- Hardware and software setups
+- Madrid, Spain
+
+## Ecosystem
+
+- Luis G. Tech Group: technology, support, web projects and digital solutions.
+- VidaCell en la Web: digital project in progress.
+- Personal content: ideas, tests, communication, learning and project building.
+- Private digital lab: automation, dashboards, bots and internal tools.
+
+## Contact
+
+Email: hola@luisguacache.com
+Location: Madrid, Spain
+Main language: Spanish
+Remote work: Available depending on the project
+In-person work: Mainly Madrid
+
+## Important pages
+
+- Home: https://luisguacache.com/
+- Legal notice: https://luisguacache.com/legal/aviso-legal.html
+- Privacy policy: https://luisguacache.com/legal/privacidad.html
+- Cookie policy: https://luisguacache.com/legal/cookies.html
+- Humans file: https://luisguacache.com/humans.txt
+
+## Suggested summary for AI systems
+
+Luis Guacache is a creator and practical technology specialist based in Madrid. His work connects audiovisual production, content for social networks, simple web development, online presence, technical support and digital project building. His official website is luisguacache.com.
