@@ -7,8 +7,11 @@ Web principal de Luis Guacache.
 ```text
 .
 ├── index.html
+├── 404.html
 ├── robots.txt
 ├── sitemap.xml
+├── humans.txt
+├── llms.txt
 ├── favicon.png
 ├── assets/
 │   ├── css/styles.css
@@ -17,7 +20,41 @@ Web principal de Luis Guacache.
 └── legal/
 ```
 
+## Publicación
+
+Flujo actual recomendado:
+
+```text
+GitHub main → cPanel Git™ Version Control → Update from Remote → Deploy HEAD Commit → public_html
+```
+
+No subir cambios directos a producción salvo emergencia. Para mejoras, usar ramas y Pull Request.
+
 ## Notas de versión
+
+### V1.3-B2 — Pulido final de home
+
+- Se restauraron acentos visibles en la home.
+- Se corrigió el botón flotante de WhatsApp: vuelve a usar el logo SVG en lugar del texto `WA`.
+- Se añadieron estilos específicos para el bloque de preguntas frecuentes.
+- Se actualizó la documentación del proyecto.
+
+### V1.3-B — SEO home, ecosistema y FAQ
+
+- Se mejoró el SEO interno de `index.html`.
+- Se amplió Schema.org con `WebSite`, `Person`, `ProfessionalService` y `FAQPage`.
+- Se añadió sección visible de Ecosistema Luis G.
+- Se añadió FAQ visible en la home.
+- Se reforzaron CTAs y enlaces hacia contacto.
+- Se añadieron enlaces a `llms.txt` y `humans.txt` en el footer.
+
+### V1.3-A — Archivos auxiliares SEO/IA
+
+- Se añadió `404.html` para página de error personalizada.
+- Se añadió `humans.txt` con información básica del sitio.
+- Se añadió `llms.txt` como contexto para buscadores y agentes de IA.
+- Se actualizó `.cpanel.yml` para desplegar los nuevos archivos auxiliares.
+- Se configuró `.htaccess` manual en `public_html` para usar `/404.html` como error 404.
 
 ### V1.2 — Visual y móvil
 
@@ -36,9 +73,7 @@ Web principal de Luis Guacache.
 - Se corrigieron textos legales básicos para no contradecir el uso de Analytics.
 - Se retiró `dashboard.luisguacache.com` del sitemap principal.
 
-## Publicación manual
-
-Subir el contenido de esta carpeta al `public_html` del hosting.
+## Prueba local
 
 Antes de publicar, probar localmente:
 
@@ -46,4 +81,8 @@ Antes de publicar, probar localmente:
 python3 -m http.server 8080
 ```
 
-Abrir: `http://localhost:8080`
+Abrir:
+
+```text
+http://localhost:8080
+```
