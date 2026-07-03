@@ -1,0 +1,11 @@
+/* TEAM */
+Owner: Luis Guacache
+Site: https://luisguacache.com/
+Location: Madrid, Spain
+Contact: hola@luisguacache.com
+
+/* SITE */
+Language: Spanish
+Type: Personal website
+Stack: HTML, CSS, JavaScript
+Repository: https://github.com/luistragedia/luisguacache.com
