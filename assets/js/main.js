@@ -6,6 +6,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const GA_ID = "G-QC6G42P1HY";
   const CONSENT_KEY = "lg_cookie_analytics";
+  const SOCIAL_LINKS = [
+    { label: "Facebook", url: "https://www.facebook.com/luisitoendigital" },
+    { label: "Instagram", url: "https://www.instagram.com/luisitoendigital" },
+    { label: "TikTok", url: "https://www.tiktok.com/@luisitoendigital" },
+    { label: "YouTube", url: "https://www.youtube.com/@luisitoendigital" }
+  ];
+
+  function ensureLatestStylesheet() {
+    const versionedCss = "/assets/css/v14.css?v=148";
+    const currentLink = document.querySelector('link[href*="/assets/css/v14.css"]');
+    if (currentLink && currentLink.getAttribute("href") !== versionedCss) {
+      currentLink.setAttribute("href", versionedCss);
+    }
+  }
+
+  function renderRedes() {
+    const contactGrid = document.querySelector("#contacto .contact-grid");
+    if (contactGrid && !document.querySelector(".redes-card")) {
+      const redesCard = document.createElement("div");
+      redesCard.className = "contact-card redes-card";
+      redesCard.innerHTML = `
+        <h3>Redes sociales</h3>
+        <p class="muted">También puedes seguir mi contenido, procesos y proyectos digitales.</p>
+        <div class="cta-row cta-row-spaced-sm">
+          ${SOCIAL_LINKS.map((item) => `<a class="pill" href="${item.url}" target="_blank" rel="noopener">${item.label}</a>`).join("")}
+        </div>
+      `;
+      contactGrid.appendChild(redesCard);
+    }
+
+    const footerNav = document.querySelector(".footer-nav");
+    if (footerNav && !footerNav.querySelector('[href="https://www.instagram.com/luisitoendigital"]')) {
+      SOCIAL_LINKS.forEach((item) => {
+        const link = document.createElement("a");
+        link.href = item.url;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = item.label;
+        footerNav.appendChild(link);
+      });
+    }
+  }
+
+  function enrichStructuredData() {
+    const jsonLd = document.querySelector('script[type="application/ld+json"]');
+    if (!jsonLd || !jsonLd.textContent) return;
+
+    try {
+      const data = JSON.parse(jsonLd.textContent);
+      const graph = Array.isArray(data["@graph"]) ? data["@graph"] : [];
+      const person = graph.find((item) => item["@type"] === "Person");
+      if (!person) return;
+
+      const current = Array.isArray(person.sameAs) ? person.sameAs : [];
+      SOCIAL_LINKS.forEach((item) => {
+        if (!current.includes(item.url)) current.push(item.url);
+      });
+      person.sameAs = current;
+      jsonLd.textContent = JSON.stringify(data, null, 2);
+    } catch (error) {
+      // Si el JSON-LD no se puede leer, no bloqueamos la web.
+    }
+  }
+
+  ensureLatestStylesheet();
+  renderRedes();
+  enrichStructuredData();
 
   const storage = {
     get(key) {
