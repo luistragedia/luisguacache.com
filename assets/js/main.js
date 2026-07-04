@@ -21,6 +21,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function injectRedesStyles() {
+    if (document.getElementById("lg-redes-style")) return;
+
+    const style = document.createElement("style");
+    style.id = "lg-redes-style";
+    style.textContent = `
+      .redes-card .pill{
+        text-decoration:none;
+        line-height:1;
+      }
+      .redes-card .pill:hover,
+      .redes-card .pill:focus{
+        text-decoration:none;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
   function renderRedes() {
     const contactGrid = document.querySelector("#contacto .contact-grid");
     if (contactGrid && !document.querySelector(".redes-card")) {
@@ -71,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   ensureLatestStylesheet();
+  injectRedesStyles();
   renderRedes();
   enrichStructuredData();
 
