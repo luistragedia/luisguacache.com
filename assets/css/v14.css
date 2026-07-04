@@ -1,4 +1,4 @@
-/* V1.4.6 — Flat clean layout */
+/* V1.4.7 - Static frames, no card hover movement */
 .section-intro{
   max-width:760px;
 }
@@ -89,11 +89,11 @@
 }
 .highlight-panel{
   cursor:default;
-  border:0;
-  border-radius:0;
-  padding:0;
-  background:transparent;
-  box-shadow:none;
+  border:1px solid var(--line-strong);
+  border-radius:24px;
+  padding:28px;
+  background:linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.018));
+  box-shadow:var(--shadow-soft);
   transform:none;
 }
 .highlight-panel h2{
@@ -127,6 +127,8 @@
   border-color:var(--line-strong);
   background:rgba(255,255,255,.028);
 }
+
+/* Freeze non-button interactive surfaces. Buttons keep their normal hover. */
 .card,
 .contact-card,
 .faq-list details,
@@ -136,13 +138,19 @@
 .highlight-panel,
 .hero-card,
 .pill,
-.hero .badges li{
+.badges li,
+.step-number{
   transform:none !important;
   will-change:auto !important;
   backface-visibility:visible;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
-  transition:border-color .18s ease, background .18s ease, filter .18s ease !important;
+  transition:none !important;
+}
+.card::before,
+.contact-card::before{
+  opacity:0 !important;
+  transition:none !important;
 }
 @media (hover:hover) and (pointer:fine){
   .card:hover,
@@ -154,10 +162,13 @@
   .highlight-panel:hover,
   .hero-card:hover,
   .pill:hover,
-  .hero .badges li:hover{
+  .badges li:hover{
     transform:none !important;
-    box-shadow:none !important;
     filter:none !important;
+  }
+  .card:hover::before,
+  .contact-card:hover::before{
+    opacity:0 !important;
   }
   .card:hover,
   .contact-card:hover,
@@ -166,17 +177,20 @@
   .step-card:hover,
   .confidence-item:hover,
   .pill:hover,
-  .hero .badges li:hover{
-    border-color:var(--line-strong);
-    background:rgba(255,255,255,.035);
+  .badges li:hover{
+    box-shadow:none !important;
   }
   .highlight-panel:hover{
     cursor:default;
-    border:0;
-    background:transparent;
+    border:1px solid var(--line-strong);
+    border-radius:24px;
+    padding:28px;
+    background:linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.018));
+    box-shadow:var(--shadow-soft) !important;
   }
   .hero-card:hover{
-    border-color:var(--line-strong);
+    box-shadow:0 14px 40px rgba(0,0,0,.18) !important;
+    border-color:var(--line);
   }
   .hero-card:hover img,
   .step-card:hover .step-number{
@@ -204,7 +218,13 @@
     gap:12px;
   }
   .highlight-panel{
-    padding:0;
-    border-radius:0;
+    padding:20px;
+    border-radius:18px;
+  }
+  @media (hover:hover) and (pointer:fine){
+    .highlight-panel:hover{
+      padding:20px;
+      border-radius:18px;
+    }
   }
 }
