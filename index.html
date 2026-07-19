@@ -32,7 +32,7 @@
   <meta name="twitter:image" content="https://luisguacache.com/assets/img/og.jpg" />
 
   <link rel="stylesheet" href="/assets/css/styles.css" />
-  <link rel="stylesheet" href="/assets/css/v14.css?v=142" />
+  <link rel="stylesheet" href="/assets/css/v14.css?v=149" />
 
   <script type="application/ld+json">
   {
@@ -335,17 +335,66 @@
     <section id="contacto" class="section section-alt">
       <div class="container">
         <h2>Contacto</h2>
-        <p class="muted">Cuéntame qué necesitas y te respondo rápido. Si ya tienes una idea clara, WhatsApp es lo más directo.</p>
+        <p class="muted">Cuéntame qué necesitas y te respondo rápido. Puedes preparar el mensaje en menos de un minuto o usar una vía directa.</p>
+
+        <div class="lead-qualifier" id="lead-qualifier" aria-labelledby="lead-qualifier-title">
+          <div class="lead-qualifier-copy">
+            <span class="lead-qualifier-eyebrow">Antes de escribirme</span>
+            <h3 id="lead-qualifier-title">Cuéntame en menos de un minuto qué necesitas</h3>
+            <p>Así llegamos a WhatsApp con el contexto básico y podemos ir directos a lo importante.</p>
+          </div>
+
+          <div class="lead-qualifier-progress" aria-label="Progreso del formulario">
+            <span class="is-complete" data-qualifier-progress="1"></span>
+            <span data-qualifier-progress="2"></span>
+            <span data-qualifier-progress="3"></span>
+          </div>
+
+          <div class="lead-qualifier-step is-active" data-qualifier-step="1">
+            <p class="lead-qualifier-question">¿En qué área necesitas ayuda?</p>
+            <div class="lead-qualifier-options">
+              <button type="button" data-qualifier-category="Contenido y producción">Contenido y producción<small>Fotografía, video, reels y edición</small></button>
+              <button type="button" data-qualifier-category="Web y presencia online">Web y presencia online<small>Landing, web sencilla, perfiles y SEO básico</small></button>
+              <button type="button" data-qualifier-category="Soporte técnico y setups">Soporte técnico y setups<small>Hardware, software y productividad</small></button>
+              <button type="button" data-qualifier-category="Proyectos digitales y automatización">Proyectos digitales y automatización<small>Prototipos, procesos, herramientas y documentación</small></button>
+              <button type="button" data-qualifier-category="Orientación inicial">No estoy seguro todavía<small>Revisamos juntos qué camino tiene más sentido</small></button>
+            </div>
+          </div>
+
+          <div class="lead-qualifier-step" data-qualifier-step="2" hidden>
+            <p class="lead-qualifier-question">¿Para cuándo lo necesitas?</p>
+            <div class="lead-qualifier-options">
+              <button type="button" data-qualifier-urgency="Lo antes posible">Lo antes posible</button>
+              <button type="button" data-qualifier-urgency="Esta o la próxima semana">Esta o la próxima semana</button>
+              <button type="button" data-qualifier-urgency="Sin prisa, estoy explorando opciones">Sin prisa, estoy explorando opciones</button>
+            </div>
+            <button class="lead-qualifier-back" type="button" data-qualifier-back="1">← Volver</button>
+          </div>
+
+          <div class="lead-qualifier-step" data-qualifier-step="3" hidden>
+            <label class="lead-qualifier-question" for="lead-qualifier-context">Añade un poco de contexto</label>
+            <textarea id="lead-qualifier-context" maxlength="600" placeholder="Qué quieres conseguir, qué problema tienes o cualquier detalle que ayude (opcional)"></textarea>
+            <div class="lead-qualifier-actions">
+              <button class="lead-qualifier-back" type="button" data-qualifier-back="2">← Volver</button>
+              <button class="btn" type="button" data-qualifier-finish>Preparar mensaje</button>
+            </div>
+          </div>
+
+          <div class="lead-qualifier-step" data-qualifier-step="4" hidden>
+            <p class="lead-qualifier-question">Tu mensaje está listo</p>
+            <div class="lead-qualifier-result" data-qualifier-result aria-live="polite"></div>
+            <a class="btn lead-qualifier-whatsapp" data-qualifier-whatsapp href="#" target="_blank" rel="noopener noreferrer">Abrir WhatsApp con este mensaje</a>
+            <div class="lead-qualifier-footer">
+              <span>Puedes editarlo antes de enviarlo.</span>
+              <button type="button" data-qualifier-reset>Empezar de nuevo</button>
+            </div>
+          </div>
+        </div>
+
         <div class="contact-grid">
           <div class="contact-card"><h3>WhatsApp</h3><p class="muted">La forma más rápida para coordinar y empezar.</p><div class="cta-row cta-row-spaced-sm"><a class="btn" href="https://wa.me/34647551192?text=Hola%20Luis%2C%20vengo%20de%20luisguacache.com%20y%20quiero%20hablar%20de%20un%20proyecto." target="_blank" rel="noopener">Escribir por WhatsApp</a></div></div>
           <div class="contact-card"><h3>Email</h3><p class="muted">Para información más detallada o archivos.</p><p><a href="mailto:hola@luisguacache.com">hola@luisguacache.com</a></p><span class="pill">Respuesta en el día</span></div>
           <div class="contact-card"><h3>Ubicación</h3><p class="muted">Base en Madrid. Atención presencial y clientes remotos.</p><span class="pill">Madrid · Clientes remotos</span></div>
-        </div>
-        <div class="cta-row cta-row-spaced">
-          <a class="btn btn-outline" href="https://wa.me/34647551192?text=Hola%20Luis%2C%20quiero%20mejorar%20mi%20presencia%20digital." target="_blank" rel="noopener">Mejorar presencia digital</a>
-          <a class="btn btn-outline" href="https://wa.me/34647551192?text=Hola%20Luis%2C%20necesito%20una%20web%20sencilla." target="_blank" rel="noopener">Necesito una web</a>
-          <a class="btn btn-outline" href="https://wa.me/34647551192?text=Hola%20Luis%2C%20necesito%20contenido%20para%20redes." target="_blank" rel="noopener">Necesito contenido</a>
-          <a class="btn btn-outline" href="https://wa.me/34647551192?text=Hola%20Luis%2C%20necesito%20soporte%20tecnico." target="_blank" rel="noopener">Soporte técnico</a>
         </div>
       </div>
     </section>
