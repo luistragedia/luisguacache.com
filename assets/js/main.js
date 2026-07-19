@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   function ensureLatestStylesheet() {
-    const versionedCss = "/assets/css/v14.css?v=148";
+    const versionedCss = "/assets/css/v14.css?v=149";
     const currentLink = document.querySelector('link[href*="/assets/css/v14.css"]');
     if (currentLink && currentLink.getAttribute("href") !== versionedCss) {
       currentLink.setAttribute("href", versionedCss);
@@ -125,6 +125,97 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
+
+  function trackQualifierEvent(action, label) {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", action, {
+        event_category: "Cualificador",
+        event_label: label
+      });
+    }
+  }
+
+  function setupLeadQualifier() {
+    const qualifier = document.getElementById("lead-qualifier");
+    if (!qualifier) return;
+
+    const WHATSAPP_NUMBER = "34647551192";
+    const state = { category: "", urgency: "", context: "" };
+    const steps = qualifier.querySelectorAll("[data-qualifier-step]");
+    const progress = qualifier.querySelectorAll("[data-qualifier-progress]");
+    const contextField = qualifier.querySelector("#lead-qualifier-context");
+    const result = qualifier.querySelector("[data-qualifier-result]");
+    const whatsappLink = qualifier.querySelector("[data-qualifier-whatsapp]");
+
+    function showStep(stepNumber, moveFocus = true) {
+      steps.forEach((step) => {
+        const isActive = Number(step.dataset.qualifierStep) === stepNumber;
+        step.classList.toggle("is-active", isActive);
+        step.hidden = !isActive;
+      });
+
+      progress.forEach((item) => {
+        item.classList.toggle("is-complete", Number(item.dataset.qualifierProgress) <= Math.min(stepNumber, 3));
+      });
+
+      if (moveFocus) {
+        const activeStep = qualifier.querySelector(`[data-qualifier-step="${stepNumber}"]`);
+        const focusTarget = activeStep?.querySelector("button, textarea, a");
+        focusTarget?.focus({ preventScroll: true });
+      }
+    }
+
+    qualifier.querySelectorAll("[data-qualifier-category]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.category = button.dataset.qualifierCategory;
+        trackQualifierEvent("qualifier_category", state.category);
+        showStep(2);
+      });
+    });
+
+    qualifier.querySelectorAll("[data-qualifier-urgency]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.urgency = button.dataset.qualifierUrgency;
+        trackQualifierEvent("qualifier_urgency", state.urgency);
+        showStep(3);
+      });
+    });
+
+    qualifier.querySelectorAll("[data-qualifier-back]").forEach((button) => {
+      button.addEventListener("click", () => showStep(Number(button.dataset.qualifierBack)));
+    });
+
+    qualifier.querySelector("[data-qualifier-finish]")?.addEventListener("click", () => {
+      state.context = contextField.value.trim();
+      const lines = [
+        "Hola Luis, vengo de luisguacache.com.",
+        `Necesito ayuda con: ${state.category}.`,
+        `Plazo: ${state.urgency}.`
+      ];
+
+      if (state.context) lines.push(`Contexto: ${state.context}`);
+
+      const message = lines.join("\n");
+      result.textContent = message;
+      whatsappLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      trackQualifierEvent("qualifier_complete", state.category);
+      showStep(4);
+    });
+
+    qualifier.querySelector("[data-qualifier-reset]")?.addEventListener("click", () => {
+      state.category = "";
+      state.urgency = "";
+      state.context = "";
+      contextField.value = "";
+      result.textContent = "";
+      whatsappLink.href = "#";
+      showStep(1);
+    });
+
+    showStep(1, false);
+  }
+
+  setupLeadQualifier();
 
   document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach((link) => {
     link.addEventListener("click", trackWhatsAppClick);
