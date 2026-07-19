@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   function ensureLatestStylesheet() {
-    const versionedCss = "/assets/css/v14.css?v=149";
+    const versionedCss = "/assets/css/v14.css?v=150";
     const currentLink = document.querySelector('link[href*="/assets/css/v14.css"]');
     if (currentLink && currentLink.getAttribute("href") !== versionedCss) {
       currentLink.setAttribute("href", versionedCss);
