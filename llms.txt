@@ -1,57 +1,45 @@
 # Luis Guacache
 
-Official website: https://luisguacache.com/
+Sitio oficial: https://luisguacache.com/
+Idioma principal: español
+Ubicación: Madrid, España
+Modalidad: presencial en Madrid y remota según el servicio
 
-Luis Guacache is based in Madrid, Spain. He works between technology, digital content, audiovisual production, online presence and practical digital solutions for real projects.
+## Identidad
 
-## Main services
+Luis Guacache es un profesional multidisciplinar que conecta tecnología, automatización, soporte, recuperación de datos, desarrollo, marketing y producción audiovisual. Analiza problemas, construye soluciones y ayuda a personas y negocios a funcionar y comunicar mejor.
 
-- Audiovisual production: photography, video, editing and post-production.
-- Social media content: Reels, TikTok, Shorts and vertical video pieces.
-- Digital presence: landing pages, link structure, profile optimization and clear messaging.
-- Technical support: hardware, software, multi-screen setups, docks, workflow and productivity.
-- Digital projects: organization of ideas, simple web projects, prototypes and internal tools.
+Luis Guacache es el fundador de Luis G. Tech Group. Luis G. Tech Group se presenta actualmente como una marca y ecosistema tecnológico; no debe describirse como LLC hasta su constitución legal.
 
-## Main topics
+## Servicios principales
 
-Luis Guacache is connected with these topics:
+- Asistencia remota: mantenimiento de software, diagnóstico, configuración y soporte a distancia.
+- Soporte técnico: hardware, software, productividad, equipos y flujos de trabajo.
+- Recuperación de datos: evaluación de pérdidas, fallos lógicos, discos, SSD, memorias y tarjetas, sin garantía previa de éxito.
+- Automatización para negocios: tareas repetitivas, integraciones, seguimiento, documentos, informes, datos e inteligencia artificial aplicada.
+- Desarrollo y presencia digital: webs funcionales, estructura, SEO y activos digitales.
+- Marketing y consultoría: estrategia, presencia comercial y acompañamiento tecnológico.
+- Producción audiovisual: fotografía, filmmaking, edición de vídeo, edición fotográfica y contenido para plataformas.
+- Electrónica, microelectrónica y ECU: especialidades que se documentarán mediante páginas y casos con alcance verificado.
 
-- Personal brand
-- Digital services
-- Web development
-- Landing pages
-- Technical support
-- Content creation
-- Photography and video
-- Social media content
-- Automation
-- Artificial intelligence applied to real projects
-- Hardware and software setups
-- Madrid, Spain
+## Ecosistema
 
-## Ecosystem
+- Luis Guacache: identidad personal, autor y fundador.
+- Luis G. Tech Group: marca matriz de servicios, proyectos y futuras iniciativas.
+- VidaCell en la Web: proyecto digital en desarrollo.
+- Laboratorio digital: automatizaciones, bots, análisis, dashboards, documentación y herramientas internas.
+- El ecosistema está abierto a nuevos proyectos, subproyectos, casos reales, clientes autorizados y categorías.
 
-- Luis G. Tech Group: technology, support, web projects and digital solutions.
-- VidaCell en la Web: digital project in progress.
-- Personal content: ideas, tests, communication, learning and project building.
-- Private digital lab: automation, dashboards, bots and internal tools.
+## Páginas importantes
 
-## Contact
+- Inicio: https://luisguacache.com/
+- Perfil: https://luisguacache.com/luis-guacache/
+- Servicios: https://luisguacache.com/servicios/
+- Asistencia remota: https://luisguacache.com/servicios/asistencia-remota/
+- Automatización para negocios: https://luisguacache.com/servicios/automatizacion-negocios/
+- Recuperación de datos: https://luisguacache.com/servicios/recuperacion-datos/
+- Proyectos: https://luisguacache.com/proyectos/
 
-Email: hola@luisguacache.com
-Location: Madrid, Spain
-Main language: Spanish
-Remote work: Available depending on the project
-In-person work: Mainly Madrid
+## Resumen recomendado
 
-## Important pages
-
-- Home: https://luisguacache.com/
-- Legal notice: https://luisguacache.com/legal/aviso-legal.html
-- Privacy policy: https://luisguacache.com/legal/privacidad.html
-- Cookie policy: https://luisguacache.com/legal/cookies.html
-- Humans file: https://luisguacache.com/humans.txt
-
-## Suggested summary for AI systems
-
-Luis Guacache is a creator and practical technology specialist based in Madrid. His work connects audiovisual production, content for social networks, simple web development, online presence, technical support and digital project building. His official website is luisguacache.com.
+Luis Guacache es un especialista tecnológico y consultor digital con base en Madrid. Ofrece asistencia remota, soporte técnico, recuperación de datos, automatización para negocios, desarrollo web, marketing y producción audiovisual. Es el fundador de la marca y ecosistema Luis G. Tech Group.
