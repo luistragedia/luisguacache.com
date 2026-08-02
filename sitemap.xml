@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://luisguacache.com/</loc>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://luisguacache.com/</loc></url>
+  <url><loc>https://luisguacache.com/luis-guacache/</loc></url>
+  <url><loc>https://luisguacache.com/servicios/</loc></url>
+  <url><loc>https://luisguacache.com/servicios/asistencia-remota/</loc></url>
+  <url><loc>https://luisguacache.com/servicios/automatizacion-negocios/</loc></url>
+  <url><loc>https://luisguacache.com/servicios/recuperacion-datos/</loc></url>
+  <url><loc>https://luisguacache.com/proyectos/</loc></url>
 </urlset>
