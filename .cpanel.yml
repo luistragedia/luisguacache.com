@@ -12,3 +12,6 @@ deployment:
     - /bin/cp llms.txt $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp -R legal $DEPLOYPATH
+    - /bin/cp -R luis-guacache $DEPLOYPATH
+    - /bin/cp -R servicios $DEPLOYPATH
+    - /bin/cp -R proyectos $DEPLOYPATH
