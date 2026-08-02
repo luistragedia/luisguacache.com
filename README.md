@@ -132,3 +132,8 @@ Abrir:
 ```text
 http://localhost:8080
 ```
+
+
+## Publicar desde el navegador
+
+La guía para crear posts, proyectos, casos y servicios directamente desde GitHub está en [PUBLICAR-DESDE-GITHUB.md](PUBLICAR-DESDE-GITHUB.md). Una acción automática genera el HTML, los índices y el sitemap en la rama del Pull Request.
