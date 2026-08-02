@@ -33,6 +33,29 @@ No subir cambios directos a producción salvo emergencia. Para mejoras, usar ram
 
 ## Notas de versión
 
+### V3.0 — Contenidos editables y expansión por categorías
+
+- Se añadió un generador estático sin dependencias externas.
+- Los servicios, posts, proyectos y casos se redactan en Markdown dentro de `content/`.
+- Se generan automáticamente páginas HTML, índices, enlaces relacionados, Schema.org y `sitemap.xml`.
+- Los contenidos con `draft: true` no se publican ni aparecen en el sitemap.
+- Se incorporaron soporte técnico, electrónica, ECU, desarrollo web, marketing y producción audiovisual.
+- Se creó la sección `conocimiento/` con un primer artículo práctico.
+
+## Crear un post sin tocar HTML
+
+1. Copiar `content/posts/_plantilla.md` con un nombre nuevo.
+2. Cambiar `slug`, `title`, `description`, `h1`, fechas y contenido.
+3. Mantener `draft: true` mientras se trabaja.
+4. Cambiar a `draft: false` cuando esté listo.
+5. Generar y abrir la vista previa:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\publicar.ps1 -Preview
+```
+
+La vista previa se abre en `http://localhost:8080`. El generador actualiza el HTML y el sitemap, pero no sube ni despliega nada por sí solo.
+
 ### V2.0 — Arquitectura de identidad y servicios
 
 - Se creó un respaldo remoto previo en `backup/pre-upgrade-v1.4-2026-08-02`.
