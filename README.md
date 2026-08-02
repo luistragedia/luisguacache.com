@@ -33,6 +33,16 @@ No subir cambios directos a producción salvo emergencia. Para mejoras, usar ram
 
 ## Notas de versión
 
+### V2.0 — Arquitectura de identidad y servicios
+
+- Se creó un respaldo remoto previo en `backup/pre-upgrade-v1.4-2026-08-02`.
+- Se replanteó la portada alrededor de la identidad canónica Luis Guacache.
+- Se añadieron páginas para perfil, servicios, asistencia remota, automatización para negocios, recuperación de datos y proyectos.
+- Se preparó una arquitectura ampliable para proyectos, casos reales, clientes autorizados y nuevas categorías.
+- Se conectó Luis G. Tech Group como marca y ecosistema, sin declararla todavía como LLC.
+- Se amplió el grafo de entidades, el sitemap, `llms.txt` y el despliegue de cPanel.
+- Se corrigieron enlaces obsoletos de la navegación legal y el namespace del sitemap.
+
 ### V1.4 — Conversión visual y confianza
 
 - Se ajustó el hero para ser más comercial y directo.
