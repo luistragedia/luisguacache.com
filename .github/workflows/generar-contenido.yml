@@ -1,0 +1,58 @@
+name: Generar contenido web
+
+on:
+  push:
+    branches-ignore:
+      - main
+    paths:
+      - "content/**"
+      - "sitegen.py"
+      - ".github/workflows/generar-contenido.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generar-contenido-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generar:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar la rama
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generar páginas, índices y sitemap
+        run: python sitegen.py
+
+      - name: Guardar resultados generados
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for path in servicios conocimiento proyectos casos sitemap.xml; do
+            if [ -e "$path" ]; then
+              git add -A -- "$path"
+            fi
+          done
+
+          if git diff --cached --quiet; then
+            echo "No hay cambios generados."
+            exit 0
+          fi
+
+          git commit -m "Generar contenido web"
+          git push
