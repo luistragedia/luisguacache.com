@@ -15,3 +15,4 @@ deployment:
     - /bin/cp -R luis-guacache $DEPLOYPATH
     - /bin/cp -R servicios $DEPLOYPATH
     - /bin/cp -R proyectos $DEPLOYPATH
+    - /bin/cp -R conocimiento $DEPLOYPATH
