@@ -4,6 +4,37 @@ document.addEventListener("DOMContentLoaded", () => {
     yearElement.textContent = new Date().getFullYear();
   }
 
+  const signalClock = document.getElementById("signal-clock");
+  if (signalClock) {
+    const updateSignalClock = () => {
+      signalClock.textContent = new Intl.DateTimeFormat("es-ES", {
+        timeZone: "Europe/Madrid",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+      }).format(new Date());
+    };
+    updateSignalClock();
+    window.setInterval(updateSignalClock, 1000);
+  }
+
+  const revealItems = document.querySelectorAll(".reveal");
+  if (revealItems.length) {
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.14, rootMargin: "0px 0px -7%" });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+  }
+
   const GA_ID = "G-QC6G42P1HY";
   const CONSENT_KEY = "lg_cookie_analytics";
   const SOCIAL_LINKS = [

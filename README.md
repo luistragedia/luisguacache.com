@@ -29,3 +29,39 @@ También soy fundador de **Luis G. Tech Group**, marca orientada a tecnología, 
 ---
 
 Este repositorio contiene el código fuente de **luisguacache.com**.
+
+## Rediseño SIGNAL — V1 local
+
+La rama `feature/signal-v1` contiene una primera versión visual y navegable del concepto **SIGNAL**. La señal funciona como sistema narrativo entre seis capítulos:
+
+1. `ORIGIN` — identidad, enfoque y relación con Luis G. Tech Group.
+2. `ELECTRONICS` — electrónica, recuperación de datos, ECU y soporte.
+3. `BUILD` — desarrollo web, contenido, marketing y conocimiento.
+4. `AUTOMATE` — procesos, integraciones, datos e IA aplicada.
+5. `PROJECTS` — proyectos, marcas y laboratorio digital.
+6. `CONNECT` — contacto y modalidades de atención.
+
+### Alcance de esta fase
+
+- Producción no se modifica ni se despliega.
+- Se conservan las URLs, los textos de servicio, los metadatos SEO, los datos estructurados, las páginas legales, el consentimiento de analítica y los canales de contacto existentes.
+- La portada se reorganiza como recorrido SIGNAL y las páginas internas heredan el mismo sistema visual.
+- No hay secretos ni credenciales en el repositorio.
+
+### Vista local
+
+Desde la raíz del repositorio:
+
+```powershell
+python -m http.server 4173
+```
+
+Abrir `http://127.0.0.1:4173/`. Para detener el servidor, pulsar `Ctrl+C` en la terminal correspondiente.
+
+### Flujo seguro hacia producción
+
+1. Revisar la V1 local en escritorio y móvil.
+2. Ajustar contenido, ritmo, contraste y animación en esta rama.
+3. Revisar `git diff` y probar todas las rutas.
+4. Crear un commit descriptivo y subir la rama a GitHub.
+5. Abrir una revisión antes de fusionar con `main`; el despliegue de cPanel solo debe ocurrir después de una aprobación explícita.
