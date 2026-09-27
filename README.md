@@ -30,7 +30,7 @@ También soy fundador de **Luis G. Tech Group**, marca orientada a tecnología, 
 
 Este repositorio contiene el código fuente de **luisguacache.com**.
 
-## Rediseño SIGNAL — V1 local
+## Rediseño SIGNAL
 
 El concepto **SIGNAL** utiliza la señal como identidad visual y narrativa para conectar seis áreas principales, sin mostrar códigos internos en la interfaz pública:
 
@@ -41,12 +41,21 @@ El concepto **SIGNAL** utiliza la señal como identidad visual y narrativa para 
 5. `PROYECTOS` — proyectos, marcas y laboratorio digital.
 6. `CONTACTO` — contacto y modalidades de atención.
 
-### Alcance de esta fase
+### Estado actual
 
-- Producción no se modifica ni se despliega.
+- La V1 pública se mantiene en `main` y continúa siendo la versión desplegada.
+- La propuesta compacta V2 se desarrolla en `feature/signal-compact-v2` y no se publica sin revisión previa.
 - Se conservan las URLs, los textos de servicio, los metadatos SEO, los datos estructurados, las páginas legales, el consentimiento de analítica y los canales de contacto existentes.
-- La portada se reorganiza como recorrido SIGNAL y las páginas internas heredan el mismo sistema visual.
 - No hay secretos ni credenciales en el repositorio.
+
+### V2 compacta
+
+- Reduce la longitud de la portada y elimina la repetición de capítulos visualmente idénticos.
+- Da prioridad a proyectos y evidencias antes de presentar todas las capacidades.
+- Reúne electrónica, desarrollo y automatización en filas editoriales densas y fáciles de comparar.
+- Integra la fotografía de Luis como perfil profesional, no como recurso principal de la portada.
+- Conserva el pulso como firma visual, sin mostrar rótulos `SIGNAL` ni códigos internos.
+- Reescribe los mensajes principales con un tono más directo y humano.
 
 ### Limpieza previa a publicación
 
@@ -68,7 +77,7 @@ Abrir `http://127.0.0.1:4173/`. Para detener el servidor, pulsar `Ctrl+C` en la 
 
 ### Flujo seguro hacia producción
 
-1. Revisar la V1 local en escritorio y móvil.
+1. Revisar la V2 local en escritorio y móvil.
 2. Ajustar contenido, ritmo, contraste y animación en esta rama.
 3. Revisar `git diff` y probar todas las rutas.
 4. Crear un commit descriptivo y subir la rama a GitHub.
