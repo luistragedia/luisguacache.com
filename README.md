@@ -34,12 +34,12 @@ Este repositorio contiene el código fuente de **luisguacache.com**.
 
 La rama `feature/signal-v1` contiene una primera versión visual y navegable del concepto **SIGNAL**. La señal funciona como sistema narrativo entre seis capítulos:
 
-1. `ORIGIN` — identidad, enfoque y relación con Luis G. Tech Group.
-2. `ELECTRONICS` — electrónica, recuperación de datos, ECU y soporte.
-3. `BUILD` — desarrollo web, contenido, marketing y conocimiento.
-4. `AUTOMATE` — procesos, integraciones, datos e IA aplicada.
-5. `PROJECTS` — proyectos, marcas y laboratorio digital.
-6. `CONNECT` — contacto y modalidades de atención.
+1. `ORIGEN` — identidad, enfoque y relación con Luis G. Tech Group.
+2. `ELECTRÓNICA` — electrónica, recuperación de datos, ECU y soporte.
+3. `DESARROLLO` — desarrollo web, contenido, marketing y conocimiento.
+4. `AUTOMATIZACIÓN` — procesos, integraciones, datos e IA aplicada.
+5. `PROYECTOS` — proyectos, marcas y laboratorio digital.
+6. `CONTACTO` — contacto y modalidades de atención.
 
 ### Alcance de esta fase
 
@@ -47,6 +47,14 @@ La rama `feature/signal-v1` contiene una primera versión visual y navegable del
 - Se conservan las URLs, los textos de servicio, los metadatos SEO, los datos estructurados, las páginas legales, el consentimiento de analítica y los canales de contacto existentes.
 - La portada se reorganiza como recorrido SIGNAL y las páginas internas heredan el mismo sistema visual.
 - No hay secretos ni credenciales en el repositorio.
+
+### Limpieza previa a publicación
+
+- Se conservan los capítulos `SIGNAL 01–06`, pero se retiran códigos internos y estados propios de una maqueta.
+- El reloj y el indicador técnico de conexión se eliminan de la portada.
+- Los textos de proyectos se presentan como información pública, sin notas sobre trabajo pendiente.
+- El posicionamiento y los metadatos sociales se alinean con tecnología, automatización y desarrollo con alcance remoto internacional.
+- Madrid se mantiene solo como contexto de los servicios que sí requieren atención presencial.
 
 ### Vista local
 

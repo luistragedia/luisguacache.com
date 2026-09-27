@@ -4,21 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     yearElement.textContent = new Date().getFullYear();
   }
 
-  const signalClock = document.getElementById("signal-clock");
-  if (signalClock) {
-    const updateSignalClock = () => {
-      signalClock.textContent = new Intl.DateTimeFormat("es-ES", {
-        timeZone: "Europe/Madrid",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false
-      }).format(new Date());
-    };
-    updateSignalClock();
-    window.setInterval(updateSignalClock, 1000);
-  }
-
   const revealItems = document.querySelectorAll(".reveal");
   if (revealItems.length) {
     if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
