@@ -32,7 +32,7 @@ Este repositorio contiene el código fuente de **luisguacache.com**.
 
 ## Rediseño SIGNAL — V1 local
 
-La rama `feature/signal-v1` contiene una primera versión visual y navegable del concepto **SIGNAL**. La señal funciona como sistema narrativo entre seis capítulos:
+El concepto **SIGNAL** utiliza la señal como identidad visual y narrativa para conectar seis áreas principales, sin mostrar códigos internos en la interfaz pública:
 
 1. `ORIGEN` — identidad, enfoque y relación con Luis G. Tech Group.
 2. `ELECTRÓNICA` — electrónica, recuperación de datos, ECU y soporte.
@@ -50,7 +50,7 @@ La rama `feature/signal-v1` contiene una primera versión visual y navegable del
 
 ### Limpieza previa a publicación
 
-- Se conservan los capítulos `SIGNAL 01–06`, pero se retiran códigos internos y estados propios de una maqueta.
+- Se conservan las seis áreas del recorrido, pero se retiran los rótulos `SIGNAL 01–06`, códigos internos y estados propios de una maqueta.
 - El reloj y el indicador técnico de conexión se eliminan de la portada.
 - Los textos de proyectos se presentan como información pública, sin notas sobre trabajo pendiente.
 - El posicionamiento y los metadatos sociales se alinean con tecnología, automatización y desarrollo con alcance remoto internacional.
