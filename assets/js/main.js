@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { label: "Facebook", url: "https://www.facebook.com/luisitoendigital" },
     { label: "Instagram", url: "https://www.instagram.com/luisitoendigital" },
     { label: "TikTok", url: "https://www.tiktok.com/@luisitoendigital" },
-    { label: "YouTube", url: "https://www.youtube.com/@luisitoendigital" }
+    { label: "YouTube", url: "https://www.youtube.com/@luisgtechgroup" }
   ];
 
   function injectRedesStyles() {
