@@ -11,7 +11,7 @@ Set-Location $projectRoot
 & $python sitegen.py
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
-Write-Host "Contenido generado correctamente." -ForegroundColor Green
+Write-Host "Contenido generado en .sitegen/." -ForegroundColor Green
 if ($Preview) {
   Write-Host "Vista previa: http://localhost:8080" -ForegroundColor Cyan
   & $python -m http.server 8080

@@ -11,7 +11,7 @@ badge: Evaluación previa · Madrid
 aside_title: Información necesaria
 aside: Indica vehículo, año, motorización, referencia de la ECU, síntomas, trabajos anteriores y objetivo de la consulta.
 related: electronica-diagnostico, recuperacion-datos, soporte-tecnico
-draft: false
+draft: true
 ---
 
 ## Evaluación técnica previa

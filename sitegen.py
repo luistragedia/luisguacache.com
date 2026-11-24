@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "content"
+OUTPUT = ROOT / ".sitegen"
 SITE_URL = "https://luisguacache.com"
 
 
@@ -36,7 +37,7 @@ class Document:
 
     @property
     def output(self) -> Path:
-        return ROOT / self.route.strip("/") / "index.html"
+        return OUTPUT / self.route.strip("/") / "index.html"
 
 
 def parse_document(path: Path) -> Document:
@@ -224,7 +225,7 @@ def build() -> None:
         if not items:
             continue
         route = {"service":"servicios", "post":"conocimiento", "project":"proyectos", "case":"casos"}[kind]
-        output = ROOT / route / "index.html"
+        output = OUTPUT / route / "index.html"
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(render_index(kind, items), encoding="utf-8")
     # Keep hand-authored public hubs in the sitemap even when they do not yet
@@ -234,7 +235,8 @@ def build() -> None:
     for kind in {doc.kind for doc in published}:
         urls.add({"service":"/servicios/", "post":"/conocimiento/", "project":"/proyectos/", "case":"/casos/"}[kind])
     body = "\n".join(f"  <url><loc>{SITE_URL}{route}</loc></url>" for route in sorted(urls))
-    (ROOT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n', encoding="utf-8")
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    (OUTPUT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n', encoding="utf-8")
     print(f"Generadas {len(published)} páginas de contenido y {len({doc.kind for doc in published})} índices.")
 
 
