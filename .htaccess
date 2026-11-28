@@ -1,1 +1,8 @@
 ErrorDocument 404 /404.html
+
+RewriteEngine On
+
+# Redirect explicit requests for existing page indexes, not internal DirectoryIndex lookups.
+RewriteCond %{THE_REQUEST} "\s/[^?\s]*index\.html(?:[?\s])"
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^((?:(?:conocimiento|luis-guacache|proyectos|servicios)/(?:[a-z0-9-]+/)?)?)index\.html$ /$1 [R=301,L]
