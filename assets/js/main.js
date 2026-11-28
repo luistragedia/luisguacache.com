@@ -109,19 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  function loadAnalytics() {
-    if (window.gtag || document.querySelector(`script[src*="${GA_ID}"]`)) return;
-
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function gtag(){ window.dataLayer.push(arguments); };
-    window.gtag("js", new Date());
-    window.gtag("config", GA_ID, { anonymize_ip: true });
-
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-    document.head.appendChild(script);
-  }
+  function loadAnalytics() {}
 
   function trackWhatsAppClick() {
     if (typeof window.gtag === "function") {
