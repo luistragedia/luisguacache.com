@@ -1,8 +1,18 @@
 ErrorDocument 404 /404.html
 
 RewriteEngine On
+RewriteOptions AllowNoSlash
 
 # Redirect explicit requests for existing page indexes, not internal DirectoryIndex lookups.
 RewriteCond %{THE_REQUEST} "\s/[^?\s]*index\.html(?:[?\s])"
 RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^((?:(?:conocimiento|luis-guacache|proyectos|servicios)/(?:[a-z0-9-]+/)?)?)index\.html$ /$1 [R=301,L]
+RewriteRule ^((?:(?:conocimiento|luis-guacache|proyectos|servicios)/(?:[a-z0-9-]+/)?)?)index\.html$ https://luisguacache.com/$1 [R=301,END]
+
+# Normalize public page directories before mod_dir can redirect using the origin scheme.
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^((?:conocimiento|luis-guacache|proyectos|servicios)(?:/[a-z0-9-]+)?)$ https://luisguacache.com/$1/ [R=301,END]
+
+# Cloudflare sets X-Forwarded-Proto to the visitor's scheme. Keep the raw path encoding.
+RewriteCond expr "%{HTTP_HOST} !~ m#^luisguacache\.com$#i || req_novary('X-Forwarded-Proto') == 'http' || (%{HTTPS} != 'on' && req_novary('X-Forwarded-Proto') != 'https')"
+RewriteCond %{THE_REQUEST} "\s+(/[^?\s#]*)(?:[?\s])"
+RewriteRule ^ https://luisguacache.com%1 [R=301,END,NE]
