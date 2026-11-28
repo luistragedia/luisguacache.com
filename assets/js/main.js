@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const GA_ID = "G-QC6G42P1HY";
   const CONSENT_KEY = "lg_cookie_analytics";
+  const GA_DISABLE_KEY = `ga-disable-${GA_ID}`;
   const SOCIAL_LINKS = [
     { label: "Facebook", url: "https://www.facebook.com/luisitoendigital" },
     { label: "Instagram", url: "https://www.instagram.com/luisitoendigital" },
@@ -109,6 +110,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  let analyticsChoice = storage.get(CONSENT_KEY);
+
+  function applyAnalyticsChoice(choice) {
+    analyticsChoice = choice;
+    window[GA_DISABLE_KEY] = choice !== "accepted";
+
+    if (choice === "accepted") {
+      loadAnalytics();
+    } else if (choice === "rejected") {
+      for (const name of ["_ga", `_ga_${GA_ID.slice(2)}`]) {
+        const expired = `${name}=; Max-Age=0; Path=/`;
+        document.cookie = expired;
+        document.cookie = `${expired}; Domain=${location.hostname}`;
+      }
+    }
+  }
+
   function loadAnalytics() {
     if (window.gtag || document.querySelector(`script[src*="${GA_ID}"]`)) return;
 
@@ -124,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function trackWhatsAppClick() {
-    if (typeof window.gtag === "function") {
+    if (analyticsChoice === "accepted" && typeof window.gtag === "function") {
       window.gtag("event", "click_whatsapp", {
         event_category: "Contacto",
         event_label: "WhatsApp",
@@ -134,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function trackQualifierEvent(action, label) {
-    if (typeof window.gtag === "function") {
+    if (analyticsChoice === "accepted" && typeof window.gtag === "function") {
       window.gtag("event", action, {
         event_category: "Cualificador",
         event_label: label
@@ -228,9 +246,8 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", trackWhatsAppClick);
   });
 
-  function createCookieBanner() {
-    if (storage.get(CONSENT_KEY)) return;
-
+  function createCookieBanner(trigger) {
+    document.querySelector(".cookie-banner")?.remove();
     const banner = document.createElement("div");
     banner.className = "cookie-banner";
     banner.setAttribute("role", "dialog");
@@ -243,25 +260,54 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="cookie-actions">
         <button class="btn btn-outline" type="button" data-cookie-choice="rejected">Rechazar</button>
         <button class="btn" type="button" data-cookie-choice="accepted">Aceptar</button>
+        ${trigger ? '<button class="btn btn-outline" type="button" data-cookie-close>Cerrar</button>' : ""}
       </div>
     `;
 
+    const close = () => {
+      banner.remove();
+      trigger?.focus();
+    };
+
     banner.addEventListener("click", (event) => {
+      if (event.target.closest("[data-cookie-close]")) {
+        close();
+        return;
+      }
       const button = event.target.closest("[data-cookie-choice]");
       if (!button) return;
 
       const choice = button.getAttribute("data-cookie-choice");
       storage.set(CONSENT_KEY, choice);
-      if (choice === "accepted") loadAnalytics();
-      banner.remove();
+      applyAnalyticsChoice(choice);
+      close();
     });
 
     document.body.appendChild(banner);
+    if (trigger) {
+      banner.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") close();
+      });
+      banner.querySelector("[data-cookie-choice='rejected']").focus();
+    }
   }
 
-  if (storage.get(CONSENT_KEY) === "accepted") {
-    loadAnalytics();
+  const footer = document.querySelector(".footer-nav");
+  if (footer) {
+    const preferences = document.createElement("button");
+    preferences.type = "button";
+    preferences.className = "cookie-preferences";
+    preferences.textContent = "Preferencias de cookies";
+    preferences.setAttribute("aria-haspopup", "dialog");
+    preferences.addEventListener("click", () => createCookieBanner(preferences));
+    footer.appendChild(preferences);
   }
 
-  createCookieBanner();
+  window.addEventListener("storage", (event) => {
+    if (event.key !== CONSENT_KEY) return;
+    applyAnalyticsChoice(event.newValue);
+  });
+
+  applyAnalyticsChoice(analyticsChoice);
+  if (analyticsChoice !== "accepted" && analyticsChoice !== "rejected") createCookieBanner();
 });
