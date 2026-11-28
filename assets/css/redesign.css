@@ -16,7 +16,31 @@ body{background:var(--lg-bg);color:var(--lg-ink)}
 .nav a[aria-current="page"]{color:var(--lg-acid)}
 
 .priority-hero{position:relative;padding:clamp(72px,9vw,126px) 0 70px;overflow:hidden;border-bottom:1px solid var(--lg-line)}
-.priority-hero::after{content:"";position:absolute;inset:0 0 auto auto;width:48vw;height:48vw;transform:translate(30%,-38%);border:1px solid rgba(213,255,79,.14);border-radius:50%;box-shadow:0 0 0 9vw rgba(213,255,79,.018),0 0 0 18vw rgba(213,255,79,.012);pointer-events:none}
+.priority-hero::before,
+.priority-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:linear-gradient(to right,var(--hero-grid-line) 1px,transparent 1px),
+    linear-gradient(to bottom,var(--hero-grid-line) 1px,transparent 1px);
+  background-size:36px 36px;
+}
+.priority-hero::before{
+  --hero-grid-line:rgba(188,207,174,.10);
+  mask-image:linear-gradient(to bottom,#000 18%,transparent 98%);
+}
+.priority-hero::after{display:none}
+@media (any-hover:hover) and (any-pointer:fine) and (prefers-reduced-motion:no-preference){
+  .priority-hero::after{
+    --hero-grid-line:rgba(213,255,79,.32);
+    display:block;
+    opacity:0;
+    mask-image:radial-gradient(circle 220px at var(--hero-x,50%) var(--hero-y,50%),#000,transparent);
+    transition:opacity .22s ease-out;
+  }
+  .priority-hero.is-grid-active::after{opacity:1}
+}
 .priority-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.68fr);gap:clamp(42px,7vw,96px);align-items:end}
 .priority-hero h1{max-width:10.5ch;margin:.12em 0 .25em;font-size:clamp(3.4rem,8vw,7.2rem);line-height:.88;text-transform:uppercase}
 .priority-hero h1 span{display:block;color:transparent;-webkit-text-stroke:1px rgba(244,246,239,.62)}

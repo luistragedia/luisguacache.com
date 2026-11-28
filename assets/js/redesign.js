@@ -1,4 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const hero = document.querySelector(".priority-hero");
+  const canHighlightGrid = window.matchMedia(
+    "(any-hover: hover) and (any-pointer: fine) and (prefers-reduced-motion: no-preference)"
+  );
+
+  if (hero) {
+    hero.addEventListener("pointermove", (event) => {
+      if (event.pointerType !== "mouse" || !canHighlightGrid.matches) return;
+
+      const bounds = hero.getBoundingClientRect();
+      hero.style.setProperty("--hero-x", `${event.clientX - bounds.left}px`);
+      hero.style.setProperty("--hero-y", `${event.clientY - bounds.top}px`);
+      hero.classList.add("is-grid-active");
+    }, { passive: true });
+
+    const hideHighlight = () => hero.classList.remove("is-grid-active");
+    hero.addEventListener("pointerleave", hideHighlight);
+    hero.addEventListener("pointercancel", hideHighlight);
+    canHighlightGrid.addEventListener("change", hideHighlight);
+  }
+
   document.querySelectorAll(".site-header").forEach((header) => {
     const button = header.querySelector(".nav-toggle");
     const nav = header.querySelector(".nav");
